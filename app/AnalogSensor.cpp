@@ -28,6 +28,7 @@ AnalogSensor::~AnalogSensor()
 
 int AnalogSensor::Read()
 {
+    /*Fix 1 : Updated the pointer to shared_ptr */
     std::shared_ptr<std::vector<int>> readings = std::make_shared<std::vector<int>>(mSamples, 10);
 
     double result = std::accumulate( readings->begin(), readings->end(), 0.0 ) / readings->size();
